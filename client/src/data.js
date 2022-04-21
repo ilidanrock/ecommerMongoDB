@@ -1,7 +1,7 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "https://i.ibb.co/XsdmR2c/1.png",
+      img: "https://www.pikpng.com/pngl/m/39-397498_summer-clothes-for-women-png-transparent-image-summer.png",
       title: "SUMMER SALE",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "f5fafd",
@@ -39,7 +39,6 @@ export const sliderItems = [
       title: "LIGHT JACKETS",
     },
   ];
-
   export const popularProducts = [
     {
       id:1,
