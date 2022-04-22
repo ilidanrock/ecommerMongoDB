@@ -46,7 +46,7 @@ export const sliderItems = [
     },
     {
       id:2,
-      img:"https://cdn.shopify.com/s/files/1/0101/4832/products/Angela_Natural_Tee.png?v=1606780388",
+      img:"https://m.media-amazon.com/images/I/41ksUHbtCJL.jpg",
     },
     {
       id:3,
@@ -66,7 +66,7 @@ export const sliderItems = [
     },
     {
       id:7,
-      img:"https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
+      img:"https://global-uploads.webflow.com/5d556af3fe21d65f602dca94/5ef09efad65c3532055e6045_Order%20%23538940%20_%20ws%40greatsbrand_0001_2.jpg",
     },
     {
       id:8,
