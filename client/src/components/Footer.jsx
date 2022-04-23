@@ -59,14 +59,14 @@ const SocialIcon = styled.div`
 `;
 
 const ContacItem = styled.div`
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 `;
 
 const Payment = styled.img`
-    width: 50%;
-`
+  width: 50%;
+`;
 
 const Footer = () => {
   return (
@@ -117,18 +117,18 @@ const Footer = () => {
       <Right>
         <Title>Contact</Title>
         <ContacItem>
-          <AddLocationAltIcon style={{marginRight: '10px' }} />
+          <AddLocationAltIcon style={{ marginRight: "10px" }} />
           Jr Tapacocha 4961, Los Olivos, Lima,Peru .
         </ContacItem>
         <ContacItem>
-          <LocalPhoneIcon style={{marginRight: '10px' }} />
+          <LocalPhoneIcon style={{ marginRight: "10px" }} />
           +51920300340
         </ContacItem>
         <ContacItem>
-          <EmailIcon style={{marginRight: '10px' }} />
+          <EmailIcon style={{ marginRight: "10px" }} />
           rluis747@gmail.com
         </ContacItem>
-        <Payment src='https://i.ibb.co/Qfvn4z6/payment.png' />
+        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
       </Right>
     </Container>
   );
