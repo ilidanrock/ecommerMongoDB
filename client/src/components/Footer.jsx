@@ -65,7 +65,7 @@ const ContacItem = styled.div`
 `;
 
 const Payment = styled.img`
-  width: 50%;
+  width: 100%;
 `;
 
 const Footer = () => {
