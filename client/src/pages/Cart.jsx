@@ -2,8 +2,12 @@ import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 
-const Container = styled.div``;
+const Container = styled.div`
+  font-size: 1.6rem;
+`;
 const Wrapper = styled.div`
   padding: 20px;
 `;
@@ -44,24 +48,88 @@ const Info = styled.div`
 `;
 const Summary = styled.div`
   flex: 1;
+  border: 0.5px solid lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  height: auto;
 `;
-const Product = styled.div``;
+const Product = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
-const Image = styled.img``;
+const Image = styled.img`
+  width: 20rem;
+`;
 
-const Details = styled.div``;
+const Details = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
 
 const ProductName = styled.span``;
 
-const ProductDetail = styled.div``;
+const ProductDetail = styled.div`
+  flex: 2;
+  display: flex;
+`;
 
-const PriceDetail = styled.span``;
+const PriceDetail = styled.span`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
-const ProductId = styled.span``
+const ProductId = styled.span``;
 
-const ProductSize = styled.div``
+const ProductSize = styled.span``;
 
-const ProductColor = styled.span``
+const ProductColor = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: ${(props) => props.color};
+`;
+const ProductAmountContainer = styled.div`
+  display: flex;
+  align-content: center;
+  margin-bottom: 20px;
+`;
+const ProductAmount = styled.div`
+  font-size: 2.4rem;
+`
+const ProductoPrice = styled.div`
+  font-size: 30px;
+  font-weight: 200;
+`
+const Hr = styled.hr`
+  background-color: #eee;
+  border: none;
+  height: 1px;
+`
+const SummaryTitle = styled.h1`
+  font-weight: 200;
+`
+const SummaryItem = styled.div`
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: ${props => props.type ==='total' && "500"};
+  font-size: ${props => props.type ==='total' && "24px"};
+`
+const SummaryItemText = styled.span``
+const SummaryItemPrice = styled.span``
+const Button = styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+`
 
 const Cart = () => {
   return (
@@ -82,7 +150,7 @@ const Cart = () => {
           <Info>
             <Product>
               <ProductDetail>
-                <Image src="#" />
+                <Image src="https://om-beauty.com/wp-content/uploads/2015/11/product-img-1.jpg" />
                 <Details>
                   <ProductName>
                     <b>Product:</b> JESSIE THUNDER SHOES
@@ -90,16 +158,70 @@ const Cart = () => {
                   <ProductId>
                     <b>ID:</b>65476899
                   </ProductId>
-                  <ProductColor />
+                  <ProductColor color="black" />
                   <ProductSize>
                     <b>Size:</b>37.5
                   </ProductSize>
                 </Details>
               </ProductDetail>
-              <PriceDetail></PriceDetail>
+              <PriceDetail>
+                <ProductAmountContainer>
+                  <AddCircleIcon />
+                  <ProductAmount>2</ProductAmount>
+                  <RemoveCircleIcon/>
+                </ProductAmountContainer>
+                <ProductoPrice>$ 30</ProductoPrice>
+              </PriceDetail>
+            </Product>
+            <Hr/>
+            <Product>
+              <ProductDetail>
+                <Image src="https://om-beauty.com/wp-content/uploads/2015/11/product-img-1.jpg" />
+                <Details>
+                  <ProductName>
+                    <b>Product:</b> JESSIE THUNDER SHOES
+                  </ProductName>
+                  <ProductId>
+                    <b>ID:</b>65476899
+                  </ProductId>
+                  <ProductColor color="black" />
+                  <ProductSize>
+                    <b>Size:</b>37.5
+                  </ProductSize>
+                </Details>
+              </ProductDetail>
+              <PriceDetail>
+                <ProductAmountContainer>
+                  <AddCircleIcon />
+                  <ProductAmount>2</ProductAmount>
+                  <RemoveCircleIcon/>
+                </ProductAmountContainer>
+                <ProductoPrice>$ 30</ProductoPrice>
+              </PriceDetail>
             </Product>
           </Info>
-          <Summary>summary</Summary>
+          <Summary>
+            <SummaryTitle>
+              ORDER SUMMARY
+            </SummaryTitle>
+            <SummaryItem>
+              <SummaryItemText>Subtotal</SummaryItemText>
+              <SummaryItemPrice>$ 80</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Estimated Shipping</SummaryItemText>
+              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Shipping Discount</SummaryItemText>
+              <SummaryItemPrice>$ - 5.90</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem type='total'>
+              <SummaryItemText  >Total</SummaryItemText>
+              <SummaryItemPrice>$ 80</SummaryItemPrice>
+            </SummaryItem>
+            <Button>CHECKOUT NOW</Button>
+          </Summary>
         </Bottom>
       </Wrapper>
       <Footer />
