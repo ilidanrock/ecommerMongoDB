@@ -1,7 +1,7 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "https://www.pikpng.com/pngl/m/39-397498_summer-clothes-for-women-png-transparent-image-summer.png",
+      img: "https://user-images.githubusercontent.com/70895686/165415691-1681bec9-f634-4a58-bf39-7ad0d0469e3b.png",
       title: "SUMMER SALE",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "f5fafd",
