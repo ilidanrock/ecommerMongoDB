@@ -5,11 +5,13 @@ import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
+  ${mobile({padding:'10px', flexDirection: 'column'})};
 `;
 const ImageContainer = styled.div`
   flex: 1;
@@ -18,6 +20,7 @@ const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
+  ${mobile({height:'40vh' })};
 `;
 const InfoContainer = styled.div`
   flex: 1;
