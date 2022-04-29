@@ -21,7 +21,7 @@ const Title = styled.h1`
 const FilterText = styled.div`
   font-size: 20px;
   font-weight: 600;
-  margin-right: 20px;
+  margin: 20px 0;
   ${mobile({marginRight:'0' })};
 `;
 const Select = styled.select`

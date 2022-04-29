@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { mobile } from "../responsive";
+import { mobile, table } from "../responsive";
 
 const Container = styled.div`
   font-size: 1.6rem;
@@ -38,15 +38,15 @@ const Des = styled.p`
   margin: 20px 0px;
 `;
 const Price = styled.span`
+  margin: 0 4rem;
   font-weight: 100;
   font-size: 40px;
 `;
 
 const FilterContainer = styled.div`
-  width: 50%;
   margin: 30px 0px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   ${mobile({ width: "100%" })};
 `;
 const Filter = styled.div`
@@ -72,10 +72,10 @@ const FilterSize = styled.select`
 const FilterSizeOption = styled.option``;
 
 const AddContainer = styled.div`
-  width: 50%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  ${table({ width: "auto" })};
   ${mobile({ width: "100%" })};
 `;
 

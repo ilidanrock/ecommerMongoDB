@@ -69,6 +69,7 @@ const Description = styled.p`
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 3px;
+  padding: 0 40px;
 `;
 const Button = styled.button`
   padding: 10px;
