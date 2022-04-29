@@ -11,6 +11,8 @@ import {mobile} from '../responsive'
 
 const Container = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  font-size: 1.6rem;
   ${mobile({ flexDirection:'column' })}
 `;
 const Left = styled.div`

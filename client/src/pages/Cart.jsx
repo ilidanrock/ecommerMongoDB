@@ -1,15 +1,19 @@
 import styled from "styled-components";
+
 import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
+
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   font-size: 1.6rem;
 `;
 const Wrapper = styled.div`
   padding: 20px;
+  ${mobile({padding:"10px"})}
 `;
 const Title = styled.h1`
   font-weight: 300;
@@ -20,18 +24,21 @@ const Top = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  ${mobile({padding:"20px 0"})}
 `;
 const TopButton = styled.button`
-  padding: 10px;
+  padding: 8px;
   font-weight: 600;
   cursor: pointer;
-  border: ${(props) => props.type === "filled" && "none"};
+  /* border: ${(props) => props.type === "filled" && "none"}; */
   background-color: ${(props) =>
     props.type === "filled" ? "black" : "transparent"};
   color: ${(props) => props.type === "filled" && "white"};
 `;
 
-const TopTexts = styled.div``;
+const TopTexts = styled.div`
+  ${mobile({display: 'none'})}
+`;
 
 const TopText = styled.span`
   text-decoration: underline;
@@ -42,6 +49,7 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({flexDirection: "column"})}
 `;
 const Info = styled.div`
   flex: 3;
@@ -56,6 +64,7 @@ const Summary = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({flexDirection: "column"})};
 `;
 
 const Image = styled.img`
@@ -63,7 +72,7 @@ const Image = styled.img`
 `;
 
 const Details = styled.div`
-  padding: 20px;
+  padding: 20px 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -74,6 +83,7 @@ const ProductName = styled.span``;
 const ProductDetail = styled.div`
   flex: 2;
   display: flex;
+  justify-content: space-around;
 `;
 
 const PriceDetail = styled.span`
@@ -97,14 +107,19 @@ const ProductColor = styled.div`
 const ProductAmountContainer = styled.div`
   display: flex;
   align-content: center;
-  margin-bottom: 20px;
+  margin: 10px 0px;
+  align-items: center;
+  justify-content: center;
 `;
 const ProductAmount = styled.div`
   font-size: 2.4rem;
+  margin:5px;
+  ${mobile({margin: "5px 15px"})};
 `
 const ProductoPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
+  ${mobile({marginBottom: "20px"})};
 `
 const Hr = styled.hr`
   background-color: #eee;

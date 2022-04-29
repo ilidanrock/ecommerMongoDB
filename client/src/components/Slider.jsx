@@ -3,7 +3,7 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import { useState } from "react";
 import { sliderItems } from "../data";
-import {mobile} from '../responsive'
+import {mobile, table} from '../responsive'
 
 const Container = styled.div`
   width: 100%;
@@ -49,6 +49,7 @@ const ImgContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  ${table({flex: "0", width: "60%"})}
 `;
 const Image = styled.img`
   height: 80%;
@@ -57,9 +58,11 @@ const Image = styled.img`
 const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
+  ${table({flex: "0", width: "40%"})}
 `;
 const Title = styled.h1`
   font-size: 70px;
+  ${table({ fontSize: "40px"})}
 `;
 const Description = styled.p`
   margin: 50px 0px;
