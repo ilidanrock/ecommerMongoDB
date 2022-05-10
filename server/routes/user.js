@@ -6,8 +6,10 @@ router.get("/usertest", (req ,res ,next) => {
 
 router.post("/userposttest", (req,res,next) => {
     const { username , lastName } = req.body
+    console.log(req.body);
     try {
-        console.log(username);
+        
+        res.send("SHIRU")
     } catch (error) {
         
     }

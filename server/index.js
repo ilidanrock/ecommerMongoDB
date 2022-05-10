@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+var bodyParser = require('body-parser')
 const mongoose = require("mongoose");
 var morgan = require("morgan");
 
@@ -16,7 +17,11 @@ mongoose
   });
 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 app.use("/api", useRoutes);
+
+
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Backend server is running!");
