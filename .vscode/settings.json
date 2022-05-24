@@ -1,3 +1,9 @@
 {
-    "workbench.colorTheme": "Monokai Dimmed"
+    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#0d2aaa",
+        "window.activeBorder": "#202c99",
+        "tab.activeBackground": "#231b8b",
+        "titleBar.activeBackground": "#2d2199",
+      }
 }
