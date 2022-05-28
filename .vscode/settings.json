@@ -2,7 +2,7 @@
     "workbench.colorTheme": "Bearded Theme Solarized Reversed",
     "workbench.colorCustomizations": {
         "activityBar.background": "#0d2aaa",
-        "window.activeBorder": "#202c99",
+        "window.activeBorder": "#b0b5e2",
         "tab.activeBackground": "#231b8b",
         "titleBar.activeBackground": "#2d2199",
       }

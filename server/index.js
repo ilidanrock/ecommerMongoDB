@@ -21,6 +21,12 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use("/api", useRoutes);
 
+app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+  const status = err.status || 500;
+  const message = err.message || err;
+  console.error("ERROR IN INDEX",err);
+  res.status(status).send(message);
+});
 
 
 app.listen(process.env.PORT || 5000, () => {
