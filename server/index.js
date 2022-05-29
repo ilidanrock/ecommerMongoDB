@@ -5,7 +5,7 @@ var bodyParser = require('body-parser')
 const mongoose = require("mongoose");
 var morgan = require("morgan");
 const passport = require('passport')
-const passMiddle = require("./middleware/passMiddle")
+const strategy = require("./middleware/passMiddle")
 
 const useRoutes = require("./routes/index");
 
@@ -19,7 +19,7 @@ mongoose
   });
 
 app.use(passport.initialize())
-passport.use(passMiddle)
+passport.use(strategy)
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())

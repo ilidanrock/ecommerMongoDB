@@ -34,6 +34,7 @@ router.post("/login", async (req, res, next) => {
 
   try {
     const user = await User.findOne({ email: email }).exec();
+    console.log("USER", user);
     if (!user) return res.status(401).json("Wrong email");
 
     const disHashed = CryptoJS.AES.decrypt(user.password, SECRET);

@@ -1,15 +1,15 @@
 require("dotenv").config();
-import { Strategy, ExtractJwt } from "passport-jwt";
+const { Strategy, ExtractJwt } =  require("passport-jwt")
 const User = require("../Models/User");
-
 const { SECRET } = process.env;
+
 const opts = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: SECRET,
 };
-export default new Strategy(opts, async (payload, done) => {
+const strategy = new Strategy(opts, async (payload, done) => {
   try {
-    const user = await User.findById({ _id: payload._id });
+    const user = await User.findById(payload._id);
     if (user) {
       return done(null, user);
     }
@@ -18,3 +18,5 @@ export default new Strategy(opts, async (payload, done) => {
     throw error;
   }
 });
+
+module.exports = strategy
