@@ -4,6 +4,8 @@ const app = express();
 var bodyParser = require('body-parser')
 const mongoose = require("mongoose");
 var morgan = require("morgan");
+const passport = require('passport')
+const passMiddle = require("./middleware/passMiddle")
 
 const useRoutes = require("./routes/index");
 
@@ -16,14 +18,18 @@ mongoose
     console.log("DB connection error", err);
   });
 
+app.use(passport.initialize())
+passport.use(passMiddle)
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use("/api", useRoutes);
 
+
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
-  const status = err.status || 500;
-  const message = err.message || err;
+  let status = err.status || 500;
+  let message = err.message || err;
+  (err.message === "User password don't match")? status = 401 : status
   console.error("ERROR IN INDEX",err);
   res.status(status).send(message);
 });
