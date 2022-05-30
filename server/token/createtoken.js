@@ -9,6 +9,10 @@ function createToken (payload){
   });
 };
 
+const verifyTokenAndAuthorization = (req, res , next)=>{
+  
+}
+
 module.exports = {
   createToken
 };

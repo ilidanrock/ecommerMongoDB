@@ -1,19 +1,32 @@
 require("dotenv").config();
 const router = require("express").Router();
 const passport = require("passport");
-var jwt = require("jsonwebtoken");
+const CryptoJS = require("crypto-js");
+
+const {verifyToken} = require("../middleware/verifyToken.js");
+const User = require("../Models/User.js");
 
 const { SECRET } = process.env;
 
 router.put(
   "/:id",
   passport.authenticate("jwt", { session: false }),
-  (req, res, next) => {
-    const { id } = req.params;
+  verifyToken,
+  async (req, res, next) => {
+    console.log("Dentro de la ruta", req.user);
     try {
-      const token = req.headers.authorization.split(" ")[1];
-      let decoded = jwt.verify(token, SECRET);
-      if (decoded._id === id || decoded.isAdmin) {
+      const { password } = req.body;
+      let cryted = CryptoJS.AES.encrypt(password, SECRET).toString();
+
+      if (cryted) {
+        const updatedUser = await User.findByIdAndUpdate(
+          req.params.id,
+          {
+            $set: { ...req.body, password: cryted },
+          },
+          { new: true }
+        );
+        res.status(200).json(updatedUser);
       }
     } catch (error) {
       next(error);
