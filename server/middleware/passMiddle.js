@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { Strategy, ExtractJwt } =  require("passport-jwt")
+const { Strategy, ExtractJwt } = require("passport-jwt");
 const User = require("../Models/User");
 const { SECRET } = process.env;
 
@@ -20,4 +20,4 @@ const strategy = new Strategy(opts, async (payload, done) => {
   }
 });
 
-module.exports = strategy
+module.exports = strategy;

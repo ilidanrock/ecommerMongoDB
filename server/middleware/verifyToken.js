@@ -3,11 +3,11 @@ const jwt = require("jsonwebtoken");
 
 const { SECRET } = process.env;
 
-const verifyToken = (req, res, next) => {
+const verifyAuthorizations = (req, res, next) => {
   try {
     const idHeader = req.params.id;
     const token = req.headers.authorization.split(" ")[1];
-    if (token && idHeader) {
+    if (token) {
       let decoded = jwt.verify(token, SECRET);
       if (decoded._id === idHeader || decoded.isAdmin) {
         return next();
@@ -22,7 +22,7 @@ const verifyToken = (req, res, next) => {
 };
 
 const verifyTokenAndAdmin = (req, res, next) => {
-  verifyToken(req, res, () => {
+  verifyAuthorizations(req, res, () => {
     if (req.user.isAdmin) {
       next();
     } else {
@@ -30,4 +30,4 @@ const verifyTokenAndAdmin = (req, res, next) => {
     }
   });
 };
-module.exports = { verifyToken, verifyTokenAndAdmin };
+module.exports = { verifyAuthorizations , verifyTokenAndAdmin };
