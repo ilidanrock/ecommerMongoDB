@@ -1,18 +1,16 @@
-require("dotenv").config();
+require('dotenv').config()
 var jwt = require('jsonwebtoken')
 
-const { SECRET } = process.env;
+const { SECRET } = process.env
 
-function createToken (payload){
-  return jwt.sign({ _id: payload._id, isAdmin: payload.isAdmin }, SECRET, {
-    expiresIn: "3d",
-  });
-};
-
-const verifyTokenAndAuthorization = (req, res , next)=>{
-  
+function createToken(payload) {
+    return jwt.sign({ _id: payload._id, isAdmin: payload.isAdmin }, SECRET, {
+        expiresIn: '3d',
+    })
 }
 
+const verifyTokenAndAuthorization = (req, res, next) => {}
+
 module.exports = {
-  createToken
-};
+    createToken,
+}
