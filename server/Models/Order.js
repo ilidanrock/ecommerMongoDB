@@ -27,7 +27,7 @@ const OrderSchema = new mongoose.Schema(
             required: true,
         },
         status: {
-            type: Number,
+            type: String,
             default: 'pending',
         },
     },

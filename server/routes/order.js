@@ -103,9 +103,11 @@ router.get(
     async (req, res, next) => {
         try {
             const date = new Date()
+
             const lastMonth = new Date(date.setMonth(date.getMonth() - 1))
+
             const previousMonth = new Date(
-                new Date.setMonth(lastMonth.getMonth() - 1)
+                new Date().setMonth(lastMonth.getMonth() - 1)
             )
 
             const income = await Order.aggregate([
@@ -114,8 +116,8 @@ router.get(
                     $project: {
                         month: {
                             $month: '$createdAt',
-                            sales: '$amount',
                         },
+                        sales: '$amount',
                     },
                 },
                 {
