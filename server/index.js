@@ -6,6 +6,7 @@ const mongoose = require('mongoose')
 var morgan = require('morgan')
 const passport = require('passport')
 const strategy = require('./middleware/passMiddle')
+var cors = require('cors')
 
 const useRoutes = require('./routes/index')
 
@@ -18,6 +19,7 @@ mongoose
         console.log('DB connection error', err)
     })
 
+app.use(cors())
 app.use(passport.initialize())
 passport.use(strategy)
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
